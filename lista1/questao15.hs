@@ -11,9 +11,6 @@ unique_aux (x:xs) y | not (exist_in x y) && xs /= [] = unique_aux xs new_list
                     | exist_in x y && xs == [] = y
                     where new_list = x : y
 
-exist_in a l | l == [] = False
-             | a == x = True
-             | otherwise = exist_in a xs
-             where 
-               x = head l
-               xs = tail l
+exist_in _ [] = False
+exist_in a (x:xs) | a == x = True
+                  | otherwise = exist_in a xs

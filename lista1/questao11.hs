@@ -2,6 +2,7 @@
 -- EX(S):
 -- maioresQue 10 [4 6 30 3 15 3 10 7] ==> [30, 15]
 
+maioresQue _ [] = []
 maioresQue x (a:u) | a > x && u /= [] = a : maioresQue x u
                    | a > x && u == [] = a : []
                    | u /= [] = maioresQue x u
