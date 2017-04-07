@@ -4,7 +4,12 @@
 -- menores 5 [6,1,2,3,4] ==> [6,1,2,3,4]
 -- menores 4 [3,1,2] ==> [3,1,2]
 
-menores n (x:xs) | n > 0 && menor x xs
+-- OUTPUT desta funcao nao está na mesma ordem da lista u
 
-menor x [y] = x <= y 
+menores n (x:xs) | n == 0 = []
+                 | n > 0 && xs == [] = x : []
+                 | n > 0 && menor x xs = x : menores (n-1) xs
+                 | n > 0 && not (menor x xs) = menores n (xs ++ [x])
+                 
+menor x [y] = x <= y
 menor x (y:ys) = x <= y && menor x ys
