@@ -1,7 +1,7 @@
 -- entrada: [1,2,3,4,5]
 -- saida: (5, 5)
 
-tupla l = tupla_aux l 1
+tupla l = tupla_aux l 0
 
 tupla_aux (x:xs) cont | xs == [] = (x, cont)
                       | maior x xs = (x, cont)
