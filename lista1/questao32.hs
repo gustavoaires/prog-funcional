@@ -7,14 +7,14 @@
 
 isPalind [] = True
 isPalind [a] = True
-isPalind (x:xs) | getLast xs == x = isPalind ys
+isPalind (x:xs) | (last xs) == x = isPalind (init xs)
                 | otherwise = False
-                where ys = removeLast xs
+                -- where ys = removeLast xs
 
 -- a funcao getLast pode ser substituida pela funcao last do prelude
 getLast [x] = x
 getLast (x:xs) = getLast xs
 
 -- a funcao removeLast pode ser substituida pela funcao init do prelude
-removeLast (x:xs) | xs == [] = []
-                  | otherwise = x : removeLast xs
+removeLast [x] = []
+removeLast (x:xs) = x : removeLast xs

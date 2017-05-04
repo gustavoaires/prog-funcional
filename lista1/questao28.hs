@@ -2,6 +2,9 @@
 -- EX(S):
 -- rotDir 0 "asdfg" ==> "asdfg"
 -- rotDir 1 "asdfg" ==> "gasdf"
--- rotDir 3 "asdfg" ==> "fgasd"
--- rotDir 4 "asdfg" ==> "dfgas"
+-- rotDir 2 "asdfg" ==> "fgasd"
+-- rotDir 3 "asdfg" ==> "dfgas"
 
+rotDir n l
+    | n == 0 = l
+    | otherwise = rotDir (n-1) (last l : init l)
