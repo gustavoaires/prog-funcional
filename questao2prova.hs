@@ -1,0 +1,1 @@
+multiplos n1 n2 n3 = [x | x <- [n1..n2], mod x n3 == 0]

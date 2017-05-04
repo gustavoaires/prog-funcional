@@ -5,5 +5,6 @@
 -- rotEsq 3 "asdfg" ==> "fgasd"
 -- rotEsq 4 "asdfg" ==> "gasdf"
 
-rotEsq n (x:xs) | n == 0 = x : xs
-                | otherwise = rotEsq (n-1) (xs++[x])
+rotEsq n (x:xs) 
+    | n == 0 = x : xs
+    | otherwise = rotEsq (n-1) (xs++[x])

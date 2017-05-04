@@ -1,0 +1,1 @@
+compreende l1 l2 = [(x, y) | x <- l1, y <- l2]

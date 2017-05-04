@@ -1,0 +1,1 @@
+interseccao x y = [a | a <- x, b <- y, a == b]
